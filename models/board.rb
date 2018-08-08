@@ -35,7 +35,7 @@ class Board
   
   def set_fleet
     @fleet.vessels.each do |vessel|
-      set_vessel_position(vessel, @fleet)
+      set_vessel_position(vessel)
     end
   end
   
@@ -68,13 +68,13 @@ class Board
     BoardHelper.y_axis.to_a.shuffle.sample
   end
   
-  def set_vessel_position(vessel, fleet)
+  def set_vessel_position(vessel)
     vessel.position = random_coordinates
     vessel.build_coordinates
-    while !(vessel.location_valid? && fleet.coordinates_valid?(vessel))
+    while !(vessel.location_valid? && @fleet.coordinates_valid?(vessel))
       vessel.position = random_coordinates
       vessel.build_coordinates
     end
-    fleet.add_to_fleet(vessel)
+    @fleet.add_to_fleet(vessel)
   end
 end
