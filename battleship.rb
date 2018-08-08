@@ -5,7 +5,7 @@ require_relative './models/board'
 system 'clear'
 user_fleet = Fleet.new()
 game_board= Board.new(user_fleet)
-game_board.set_fleet(user_fleet)
+game_board.set_fleet
 board_matrix = game_board.generate_board
 box = TTY::Box.frame(
   width: 100,
