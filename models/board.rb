@@ -33,9 +33,9 @@ class Board
     footer(board_str)
   end
   
-  def set_fleet(fleet)
-    fleet.vessels.each do |vessel|
-      set_vessel_position(vessel, fleet)
+  def set_fleet
+    @fleet.vessels.each do |vessel|
+      set_vessel_position(vessel, @fleet)
     end
   end
   

@@ -31,7 +31,7 @@ class Vessel
   
   def location_valid?
     max_boundary = 11 - @size
-    min_boundary = size
+    min_boundary = @size
     
     if (( horizontal? && BoardHelper.column(@position) > max_boundary) || (vertical? && BoardHelper.row(@position) > max_boundary)) || (( horizontal? && BoardHelper.column(@position) < min_boundary) || (vertical? && BoardHelper.row(@position) < min_boundary)) || (BoardHelper.column(@position) > 10 || BoardHelper.row(@position) > 10)
       false
